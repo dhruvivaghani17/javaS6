@@ -1,0 +1,17 @@
+
+body{
+    font-family: Arial;
+    color: blue;
+    background: linear-gradient(160deg,#89D8E3,#CD899E,#F9D3C0,#CFE0F8,#CD899E,#9B70A0,#101E42);
+}
+.con{
+    background: linear-gradient(160deg,#89D8E3,#CD899E,#F9D3C0,#CFE0F8,#CD899E,#9B70A0,#101E42);
+    /*    margin:auto;
+        padding: 20px;*/
+}
+
+p {
+    color: blue; /* Change to your desired color */
+}
+
+
