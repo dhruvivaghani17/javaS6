@@ -67,15 +67,9 @@
                         for (ownerData object : l) {
                 %>
                 <tr>
-                    <td>
-                        <%=object.getId()%>
-                    </td>
-                    <td>
-                        <%=object.getoName()%>
-                    </td>
-                    <td>
-                        <%=object.getDate()%>
-                    </td>
+                    <td><%=object.getId()%> </td>
+                    <td><%=object.getoName()%></td>
+                    <td> <%=object.getDate()%></td>
                     <td>
                         <a href="ownerUpdate.jsp?id=<%=object.getId()%>&name=<%=object.getoName()%>&date=<%=object.getDate()%>" style="text-decoration: none;">
                             <i class="fas fa-pencil-alt text-primary"></i>
