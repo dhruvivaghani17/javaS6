@@ -14,6 +14,15 @@ public class drowingData {
     private String oname;
     private String date;
     private float amt;
+    private int Userid;
+
+    public int getUserid() {
+        return Userid;
+    }
+
+    public void setUserid(int Userid) {
+        this.Userid = Userid;
+    }
 
     public int getId() {
         return id;
@@ -47,9 +56,14 @@ public class drowingData {
         this.amt = amt;
     }
 
+//    @Override
+//    public String toString() {
+//        return "drowingData{" + "id=" + id + ", oname=" + oname + ", date=" + date + ", amt=" + amt + '}';
+//    }
+
     @Override
     public String toString() {
-        return "drowingData{" + "id=" + id + ", oname=" + oname + ", date=" + date + ", amt=" + amt + '}';
+        return "drowingData{" + "id=" + id + ", oname=" + oname + ", date=" + date + ", amt=" + amt + ", Userid=" + Userid + '}';
     }
 
 }

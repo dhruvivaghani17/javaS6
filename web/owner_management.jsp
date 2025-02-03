@@ -82,6 +82,10 @@
                     <div class="form-group">
                         <input type="date" class="form-control text-secondary" id="date"name="dt" required>
                     </div>
+                    <div class="form-group formmain">
+                        <input type="number" class="form-control textbox" name="uid" placeholder="" required>
+                        <label class="form-labeline">Enter User Id</label>
+                    </div>
                     <div class="mybtn">
                         <button type="submit" class="btn btn-primary" name="ins">Add</button>
                     </div>
@@ -120,16 +124,19 @@
     </body>
 </html>
 <%    try {
-
+//        out.println(session.getAttribute("abc"));
         if (request.getParameter("ins") != null) {
 //             int id = Integer.parseInt(request.getParameter("did"));
             String oName = request.getParameter("onm");
             String date = request.getParameter("dt");
+//            int id = Integer.parseInt(request.getParameter("uid"));
+            int id = Integer.parseInt(session.getAttribute("abc").toString());
 
             ownerData od = new ownerData();
 //            od.setId(id);
             od.setoName(oName);
             od.setDate(date);
+            od.setUserId(id);
 
             Configuration con = new Configuration().configure().addAnnotatedClass(ownerData.class);
             ServiceRegistry reg = new ServiceRegistryBuilder().applySettings(con.getProperties()).build();

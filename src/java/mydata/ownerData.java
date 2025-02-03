@@ -13,6 +13,7 @@ public class ownerData {
     private int id;
     private String oName;
     private String date;
+    private int UserId;
 
     public int getId() {
         return id;
@@ -38,9 +39,17 @@ public class ownerData {
         this.date = date;
     }
 
+    public int getUserId() {
+        return UserId;
+    }
+
+    public void setUserId(int UserId) {
+        this.UserId = UserId;
+    }
+
     @Override
     public String toString() {
-        return "ownerData{" + "id=" + id + ", oName=" + oName + ", date=" + date + '}';
+        return "ownerData{" + "id=" + id + ", oName=" + oName + ", date=" + date + ", UserId=" + UserId + '}';
     }
 
 }
