@@ -61,15 +61,15 @@
                 <h3 class="text-center mb-4">Boat/Owner Management Update</h3>
                 <form method="post">
                     <div class="form-group formmain">
-                        <input type="number" class="form-control textbox" id="id" name="oid" placeholder="" value="<%= request.getParameter("id")%>">
+                        <input type="number" class="form-control textbox" id="id1" name="oid" placeholder="" value="<%= request.getParameter("id")%>">
                         <label class="form-labeline">Enter Id</label>
                     </div>
                     <div class="form-group formmain">
-                        <input type="text" class="form-control textbox" id="name"name="onm" placeholder="" required value="<%= request.getParameter("name")%>">
+                        <input type="text" class="form-control textbox" id="name1"name="onm" placeholder=""  value="<%= request.getParameter("name")%>" required>
                         <label class="form-labeline" >Enter Name</label>
                     </div>
                     <div class="form-group">
-                        <input type="date" class="form-control text-secondary" id="date"name="dt" required value="<%= request.getParameter("date")%>">
+                        <input type="date" class="form-control text-secondary" id="date1"name="dt" required value="<%= request.getParameter("date")%>">
                     </div>
                     <button type="submit" class="btn btn-primary btn-block" name="upd">Edit</button>
                 </form>
@@ -96,12 +96,9 @@
             Session s = sf.openSession();
             s.beginTransaction();
             s.update(od);
-//            response.sendRedirect("selectdata.jsp");
-//            s.save(od);
             s.getTransaction().commit();
         }
     } catch (Exception e) {
         e.printStackTrace();
     }
-    response.sendRedirect("owner_management.jsp");
 %>

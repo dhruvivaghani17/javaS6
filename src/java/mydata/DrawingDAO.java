@@ -32,29 +32,7 @@ public class DrawingDAO {
             session.close();
         }
     }
-
-    public drowingData read(int id) {
-        Configuration con = new Configuration().configure().addAnnotatedClass(drowingData.class);
-        ServiceRegistry reg = new ServiceRegistryBuilder().applySettings(con.getProperties()).build();
-        SessionFactory sf = con.buildSessionFactory(reg);
-        Session session = sf.openSession();
-        Transaction tx = session.beginTransaction();
-        try {
-            return (drowingData) session.get(drowingData.class, id);
-
-        } finally {
-            session.close();
-        }
-    }
-
-//        public List<drowingData> readAll() {
-//        Session session = sf.openSession();
-//        try {
-//            return session.createQuery("FROM drowingData", drowingData.class).list();
-//        } finally {
-//            session.close();
-//        }
-//    }
+    
     public void update(drowingData drawing) {
         Configuration con = new Configuration().configure().addAnnotatedClass(drowingData.class);
         ServiceRegistry reg = new ServiceRegistryBuilder().applySettings(con.getProperties()).build();

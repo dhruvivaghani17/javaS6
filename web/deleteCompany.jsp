@@ -33,16 +33,12 @@
             if (user != null) {
                 sess.delete(user);
                 sess.getTransaction().commit();
-//                out.print("User  deleted successfully.");
             } else {
                 out.print("User  not found.");
             }
         } catch (Exception e) {
-//            if (transaction != null) {
-//                transaction.rollback();
-//            }
             out.print("Error: " + e.getMessage());
         }
     }
-    response.sendRedirect("addCompany.jsp");
+    response.sendRedirect("viewCompanies.jsp");
 %>

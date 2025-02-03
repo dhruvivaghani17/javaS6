@@ -43,5 +43,5 @@
             out.print("Error: " + e.getMessage());
         }
     }
-    response.sendRedirect("addDrawing.jsp");
+    response.sendRedirect("viewDrawings.jsp");
 %>

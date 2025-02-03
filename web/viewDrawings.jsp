@@ -70,8 +70,9 @@
                         <%=object.getAmt()%>
                     </td>
                     <td>
-                        <a href="editDrawing.jsp?id=<%=object.getId()%>&name=<%=object.getOname()%>&date=<%=object.getDate()%>&amount<%=object.getAmt()%>" style="text-decoration: none;">
+                        <a href="editDrawing.jsp?id=<%=object.getId()%>&name=<%=object.getOname()%>&date=<%=object.getDate()%>&amount=<%=object.getAmt()%>" style="text-decoration: none;">
                             <i class="fas fa-pencil-alt text-primary"></i>
+                        </a>
                     </td>
                     <td>
                         <a href="deleteDrawing.jsp?id=<%=object.getId()%>" style="text-decoration: none;">

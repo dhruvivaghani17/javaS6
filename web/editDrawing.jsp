@@ -89,7 +89,7 @@
             int id = Integer.parseInt(request.getParameter("did"));
             String oname = request.getParameter("dnm");
             String date = request.getParameter("ddt");
-            int amt = Integer.parseInt(request.getParameter("damt"));
+            float amt = Float.parseFloat(request.getParameter("damt"));
 
             drowingData dd = new drowingData();
 
@@ -104,5 +104,4 @@
     } catch (Exception e) {
         e.printStackTrace();
     }
-    response.sendRedirect("addDrawing.jsp");
 %>

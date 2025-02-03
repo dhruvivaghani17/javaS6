@@ -59,10 +59,6 @@
             <div class="container border border-light bg-transparent p-4"style="width:50%;border-radius: 15px;margin-top: 150px">
                 <h2 class="text-center mb-4">Company Management</h2>
                 <form method="post">
-                    <!--                    <div class="form-group formmain">
-                                            <input type="number" class="form-control textbox" id="id" name="id" placeholder="" required>
-                                            <label class="form-labeline">Enter Id</label>
-                                        </div>-->
                     <div class="form-group formmain">
                         <input type="text" class="form-control textbox" id="name"name="nm" placeholder="" required>
                         <label class="form-labeline" >Enter Name</label>
@@ -71,13 +67,11 @@
                         <input type="text" class="form-control textbox" id="name"name="ad" placeholder="" required>
                         <label class="form-labeline" >Enter  Address</label>
                     </div>
-                    <!--<button type="submit" class="btn btn-primary btn-block" name="ins">Submit</button>-->
                     <div class="mybtn">
                         <button type="submit" class="btn btn-primary" name="ins">Add</button>
                     </div>
                 </form>
             </div>
-            <%@include file="viewCompanies.jsp" %>
         </div>
         <!-- Bootstrap JS and dependencies -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

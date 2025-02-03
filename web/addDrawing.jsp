@@ -84,7 +84,6 @@
                     </div>
                 </form>
             </div>
-            <%@include file="viewDrawings.jsp" %>
         </div>
     </body>
 </html>
@@ -98,7 +97,6 @@
             float amt = Float.parseFloat(request.getParameter("damt"));
 
             drowingData dd = new drowingData();
-
 //            dd.setId(id);
             dd.setOname(oname);
             dd.setDate(date);
@@ -106,10 +104,7 @@
 
             DrawingDAO dao = new DrawingDAO();
             dao.create(dd);
-
-//            response.sendRedirect("viewDrawings.jsp");
         }
-
     } catch (Exception e) {
         e.printStackTrace();
     }

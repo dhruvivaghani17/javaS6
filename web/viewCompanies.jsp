@@ -66,8 +66,9 @@
                         <%=object.getAdd()%>
                     </td>
                     <td>
-                        <a href="editCompany.jsp?id=<%=object.getId()%>&Cname=<%=object.getCname()%>&Add=<%=object.getAdd()%>" style="text-decoration: none;">
+                        <a href="editCompany.jsp?cid=<%=object.getId()%>&Cname=<%=object.getCname()%>&Add=<%=object.getAdd()%>" style="text-decoration: none;">
                             <i class="fas fa-pencil-alt text-primary"></i>
+                        </a>
                     </td>
                     <td>
                         <a href="deleteCompany.jsp?id=<%=object.getId()%>" style="text-decoration: none;">

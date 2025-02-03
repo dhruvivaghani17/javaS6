@@ -140,7 +140,6 @@
                     </div>
                 </form>
             </div>
-            <%@include file="selectdata.jsp" %>
         </div>
     </body>
 </html>

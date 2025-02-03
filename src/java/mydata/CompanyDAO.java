@@ -11,10 +11,6 @@ import org.hibernate.service.ServiceRegistryBuilder;
 
 public class CompanyDAO {
 
-    static {
-
-    }
-
     public void create(companyData company) {
 
         Configuration con = new Configuration().configure().addAnnotatedClass(companyData.class);
@@ -34,30 +30,6 @@ public class CompanyDAO {
             session.close();
         }
     }
-
-    public companyData read(int id) {
-
-        Configuration con = new Configuration().configure().addAnnotatedClass(companyData.class);
-        ServiceRegistry reg = new ServiceRegistryBuilder().applySettings(con.getProperties()).build();
-        SessionFactory sf = con.buildSessionFactory(reg);
-        Session session = sf.openSession();
-        Transaction tx = session.beginTransaction();
-        try {
-            return (companyData) session.get(companyData.class, id);
-        } finally {
-            session.close();
-        }
-    }
-
-//    public List<companyData> readAll() {
-//        Session session = sessionFactory.openSession();
-//        try {
-//            return session.createQuery("FROM Company", companyData.class).list();
-//        } finally {
-//            session.close();
-//        }
-//    }
-    
     
     public void update(companyData company) {
 

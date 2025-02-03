@@ -79,6 +79,7 @@
                     <td>
                         <a href="ownerUpdate.jsp?id=<%=object.getId()%>&name=<%=object.getoName()%>&date=<%=object.getDate()%>" style="text-decoration: none;">
                             <i class="fas fa-pencil-alt text-primary"></i>
+                        </a>
                     </td>
                     <td>
                         <a href="ownerDelete.jsp?id=<%=object.getId()%>" style="text-decoration: none;">

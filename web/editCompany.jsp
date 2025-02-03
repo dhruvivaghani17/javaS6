@@ -60,7 +60,7 @@
                 <h2 class="text-center mb-4">Company Management</h2>
                 <form method="post">
                     <div class="form-group formmain">
-                        <input type="number" class="form-control textbox" id="id" name="id" placeholder="" required value="<%= request.getParameter("id")%>">
+                        <input type="number" class="form-control textbox" id="id" name="id" placeholder="" required value="<%= request.getParameter("cid")%>">
                         <label class="form-labeline">Enter Id</label>
                     </div>
                     <div class="form-group formmain">
@@ -103,5 +103,4 @@
     } catch (Exception e) {
         e.printStackTrace();
     }
-       response.sendRedirect("addCompany.jsp");
 %>
