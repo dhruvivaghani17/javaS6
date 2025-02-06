@@ -43,7 +43,7 @@
                             </tr>-->
                 <div class="container-fluid">
                     <form>
-                        <h3 class="text-center mt-3 ">View Owner Details</h3>
+                        <h3 class="text-center mt-3 p-4">View Owner Details</h3>
                         <table class="table table-bordered  mt-3 table-sm table-striped border-dark table-hover">
                             <tr class="text-center table-dark text-white">
                                 <th>ID</th>
