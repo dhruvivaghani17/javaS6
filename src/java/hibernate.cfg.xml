@@ -46,7 +46,7 @@ Contributor(s):
         <!--<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate?zeroDateTimeBehavior=convertToNull</property>-->
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/project</property>
     <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.hbm2ddl.auto">create</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
     <property name="hibernate.show_sql">true</property>
   </session-factory>
 </hibernate-configuration>

@@ -1,9 +1,3 @@
-<%-- 
-    Document   : viewCompanies
-    Created on : Jan 16, 2025, 5:32:08 PM
-    Author     : dkvag
---%>
-
 <%@page import="mydata.companyData"%>
 <%@page import="java.util.List"%>
 <%@page import="org.hibernate.Query"%>
@@ -21,10 +15,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eHz" crossorigin="anonymous"></script>
-        <title>Display Data</title>
+        <title>View Company</title>
         <style>
             .maindes {
-                /*background-color: #f8f9fa;*/
                 background:linear-gradient(160deg,#89D8E3,#CD899E,#F9D3C0,#CFE0F8,#CD899E,#9B70A0,#101E42);
                 background-size: cover;
                 background-repeat: no-repeat;
@@ -33,57 +26,55 @@
     </head>
     <body class="maindes">
         <div class=" overflow-hidden vh-100">
-            <table border="1" align="center" class="table w-50 mt-4 text-center">
-                <tr>
-                    <th colspan="5">Company Details</th>
-                </tr>
-                <tr>
-                    <th>ID</th>
-                    <th>Company Name</th>
-                    <th>Company Address</th>
-                    <th>Update</th>
-                    <th>Delete</th>
-                </tr>
-                <%
-                    try {
-                        companyData cd = new companyData();
-                        Configuration con = new Configuration().configure().addAnnotatedClass(companyData.class);
-                        SessionFactory sf = con.buildSessionFactory();
-                        Session s = sf.openSession();
-                        Transaction t = s.beginTransaction();
-                        Query qry = s.createQuery("from companyData");
-                        List<companyData> l = qry.list();
-                        for (companyData object : l) {
-                %>
-                <tr>
-                    <td>
-                        <%=object.getId()%>
-                    </td>
-                    <td>
-                        <%=object.getCname()%>
-                    </td>
-                    <td>
-                        <%=object.getAdd()%>
-                    </td>
-                    <td>
-                        <a href="editCompany.jsp?cid=<%=object.getId()%>&Cname=<%=object.getCname()%>&Add=<%=object.getAdd()%>" style="text-decoration: none;">
-                            <i class="fas fa-pencil-alt text-primary"></i>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="deleteCompany.jsp?id=<%=object.getId()%>" style="text-decoration: none;">
-                            <i class="fas fa-trash text-danger"></i> 
-                        </a> 
-                    </td>
-                </tr>
-                <%                            }
-
-                        t.commit();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                %>
-            </table>
+            <div class="container"  style="margin-top: 150px">
+                <div class="container-fluid">
+                    <form>
+                        <h3 class="text-center mt-3 ">View Company Details</h3>
+                        <table class="table table-bordered  mt-3 table-sm table-striped border-dark table-hover">
+                            <tr class="text-center table-dark text-white">
+                                <th>ID</th>
+                                <th>Company Name</th>
+                                <th>Company Address</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                            <%
+                                try {
+                                    companyData cd = new companyData();
+                                    Configuration con = new Configuration().configure().addAnnotatedClass(companyData.class);
+                                    SessionFactory sf = con.buildSessionFactory();
+                                    Session s = sf.openSession();
+                                    Transaction t = s.beginTransaction();
+                                    int id = Integer.parseInt(session.getAttribute("abc").toString());
+                                    Query qry = s.createQuery("from companyData where UserId=" + id);
+                                    List<companyData> l = qry.list();
+                                    for (companyData object : l) {
+                            %>
+                            <tr class="text-center">
+                                <td><%=object.getId()%></td>
+                                <td><%=object.getCname()%></td>
+                                <td><%=object.getAdd()%></td>
+                                <td>
+                                    <a href="editCompany.jsp?cid=<%=object.getId()%>&Cname=<%=object.getCname()%>&Add=<%=object.getAdd()%>" style="text-decoration: none;">
+                                        <i class="fas fa-pencil-alt text-primary"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="deleteCompany.jsp?id=<%=object.getId()%>" style="text-decoration: none;">
+                                        <i class="fas fa-trash text-danger"></i> 
+                                    </a> 
+                                </td>
+                            </tr>
+                            <% }
+                                    t.commit();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            %>
+                        </table>
+                </div>
+                </form>
+            </div>
         </div>
     </body>
 </html>

@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class drowingData {
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String oname;
     private String date;
