@@ -35,15 +35,15 @@
 </html>
 <%
     if (request.getParameter("btn") != null) {
-        session.setAttribute("abc", 101);
+//        session.setAttribute("abc", 101);
 //             session.setAttribute("abc", 102);
-//        session.setAttribute("abc", 103);
+        session.setAttribute("abc", 103);
 //        response.sendRedirect("owner_management.jsp");
 //        response.sendRedirect("addDrawing.jsp");
 //        response.sendRedirect("addCompany.jsp");
-        response.sendRedirect("selectdata.jsp");
+//        response.sendRedirect("selectdata.jsp");
 //             response.sendRedirect("viewDrawings.jsp");
-//        response.sendRedirect("viewCompanies.jsp");
+        response.sendRedirect("viewCompanies.jsp");
 
     }
 %>

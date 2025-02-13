@@ -35,6 +35,7 @@
                                 <th>Name</th>
                                 <th>Date</th>
                                 <th>Amount</th>
+                                <th>User Id</th>
                                 <th>Update</th>
                                 <th>Delete</th>
                             </tr>
@@ -55,8 +56,9 @@
                                 <td><%=object.getOname()%></td>
                                 <td><%=object.getDate()%></td>
                                 <td><%=object.getAmt()%></td>
+                                <td><%=object.getUserid()%></td>
                                 <td>
-                                    <a href="editDrawing.jsp?id=<%=object.getId()%>&name=<%=object.getOname()%>&date=<%=object.getDate()%>&amount=<%=object.getAmt()%>" style="text-decoration: none;">
+                                    <a href="editDrawing.jsp?id=<%=object.getId()%>&name=<%=object.getOname()%>&date=<%=object.getDate()%>&amount=<%=object.getAmt()%>&uid=<%=object.getUserid()%>" style="text-decoration: none;">
                                         <i class="fas fa-pencil-alt text-primary"></i>
                                     </a>
                                 </td>

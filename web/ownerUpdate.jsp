@@ -1,8 +1,3 @@
-<%-- 
-    Document   : ownerUpdate
-    Created on : Jan 6, 2025, 9:10:53 AM
-    Author     : dkvag
---%>
 
 <%@page import="org.hibernate.Session"%>
 <%@page import="org.hibernate.SessionFactory"%>
@@ -21,7 +16,6 @@
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <style>
             body {
-                /*background-color: #f8f9fa;*/
                 background:linear-gradient(160deg,#89D8E3,#CD899E,#F9D3C0,#CFE0F8,#CD899E,#9B70A0,#101E42);
             }
             .formmain{
@@ -68,6 +62,10 @@
                         <input type="text" class="form-control textbox" id="name1"name="onm" placeholder=""  value="<%= request.getParameter("name")%>" required>
                         <label class="form-labeline" >Enter Name</label>
                     </div>
+                    <div class="form-group formmain mb-3">
+                        <input type="number" class="form-control textbox" name="uid" placeholder="" required value="<%= request.getParameter("uid")%>">
+                        <label class="form-labeline">Enter User Id</label>
+                    </div>
                     <div class="form-group">
                         <input type="date" class="form-control text-secondary" id="date1"name="dt" required value="<%= request.getParameter("date")%>">
                     </div>
@@ -83,12 +81,15 @@
             int id = Integer.parseInt(request.getParameter("oid"));
             String oName = request.getParameter("onm");
             String date = request.getParameter("dt");
+            int uid = Integer.parseInt(session.getAttribute("abc").toString());
+
 
             ownerData od = new ownerData();
 
             od.setId(id);
             od.setoName(oName);
             od.setDate(date);
+            od.setUserId(uid);
 
             Configuration con = new Configuration().configure().addAnnotatedClass(ownerData.class);
             ServiceRegistry reg = new ServiceRegistryBuilder().applySettings(con.getProperties()).build();
@@ -101,4 +102,5 @@
     } catch (Exception e) {
         e.printStackTrace();
     }
+//    response.sendRedirect("selectdata.jsp");
 %>

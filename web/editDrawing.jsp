@@ -74,6 +74,10 @@
                         <input type="number" class="form-control textbox" id="id" name="damt" placeholder="" required value="<%= request.getParameter("amount")%>">
                         <label class="form-labeline">Enter Amount</label>
                     </div>
+                    <div class="form-group formmain mb-3">
+                        <input type="number" class="form-control textbox" name="uid" placeholder="" required value="<%= request.getParameter("uid")%>">
+                        <label class="form-labeline">Enter User Id</label>
+                    </div>
                     <div class="mybtn">
                         <button type="submit" class="btn btn-primary" name="upd">Edit</button>
                     </div>
@@ -90,6 +94,7 @@
             String oname = request.getParameter("dnm");
             String date = request.getParameter("ddt");
             float amt = Float.parseFloat(request.getParameter("damt"));
+            int uid = Integer.parseInt(session.getAttribute("abc").toString());
 
             drowingData dd = new drowingData();
 
@@ -97,6 +102,7 @@
             dd.setOname(oname);
             dd.setDate(date);
             dd.setAmt(amt);
+            dd.setUserid(uid);
 
             DrawingDAO dao = new DrawingDAO();
             dao.update(dd);

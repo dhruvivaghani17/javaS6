@@ -49,6 +49,7 @@
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Date</th>
+                                 <th>User Id</th>
                                 <th>Update</th>
                                 <th>Delete</th>
                             </tr>
@@ -68,8 +69,9 @@
                                 <td><%=object.getId()%> </td>
                                 <td><%=object.getoName()%></td>
                                 <td> <%=object.getDate()%></td>
+                                  <td> <%=object.getUserId()%></td>
                                 <td>
-                                    <a href="ownerUpdate.jsp?id=<%=object.getId()%>&name=<%=object.getoName()%>&date=<%=object.getDate()%>" style="text-decoration: none;">
+                                    <a href="ownerUpdate.jsp?id=<%=object.getId()%>&name=<%=object.getoName()%>&date=<%=object.getDate()%>&uid=<%=object.getUserId()%>" style="text-decoration: none;">
                                         <i class="fas fa-pencil-alt text-primary"></i>
                                     </a>
                                 </td>

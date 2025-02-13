@@ -35,6 +35,7 @@
                                 <th>ID</th>
                                 <th>Company Name</th>
                                 <th>Company Address</th>
+                                <th>User Id</th>
                                 <th>Update</th>
                                 <th>Delete</th>
                             </tr>
@@ -54,8 +55,9 @@
                                 <td><%=object.getId()%></td>
                                 <td><%=object.getCname()%></td>
                                 <td><%=object.getAdd()%></td>
+                                <td><%=object.getUserid()%></td>
                                 <td>
-                                    <a href="editCompany.jsp?cid=<%=object.getId()%>&Cname=<%=object.getCname()%>&Add=<%=object.getAdd()%>" style="text-decoration: none;">
+                                    <a href="editCompany.jsp?cid=<%=object.getId()%>&Cname=<%=object.getCname()%>&Add=<%=object.getAdd()%>&uid=<%=object.getUserid()%>" style="text-decoration: none;">
                                         <i class="fas fa-pencil-alt text-primary"></i>
                                     </a>
                                 </td>

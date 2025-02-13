@@ -71,6 +71,10 @@
                         <input type="text" class="form-control textbox" id="name"name="ad" placeholder="" required value="<%= request.getParameter("Add")%>">
                         <label class="form-labeline" >Enter  Address</label>
                     </div>
+                    <div class="form-group formmain mb-3">
+                        <input type="number" class="form-control textbox" name="uid" placeholder="" required value="<%= request.getParameter("uid")%>">
+                        <label class="form-labeline">Enter User Id</label>
+                    </div>
                     <!--<button type="submit" class="btn btn-primary btn-block" name="ins">Submit</button>-->
                     <div class="mybtn">
                         <button type="submit" class="btn btn-primary" name="upd">Edit</button>
@@ -90,12 +94,13 @@
             int id = Integer.parseInt(request.getParameter("id"));
             String cname = request.getParameter("nm");
             String cadd = request.getParameter("ad");
-
+            int uid = Integer.parseInt(session.getAttribute("abc").toString());
             companyData cd = new companyData();
 
             cd.setId(id);
             cd.setCname(cname);
             cd.setAdd(cadd);
+            cd.setUserid(uid);
 
             CompanyDAO dao = new CompanyDAO();
             dao.update(cd);
